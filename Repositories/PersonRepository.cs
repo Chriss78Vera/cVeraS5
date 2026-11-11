@@ -36,4 +36,19 @@ public class PersonRepository
         try { Init(); _conn!.Delete<Persona>(id); Message = "Persona eliminada"; }
         catch (Exception ex) { Message = "Error: " + ex.Message; }
     }
+
+    public void UpdatePerson(int id, string name)
+    {
+        try
+        {
+            Init();
+            if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("El nombre es requerido");
+            var person = _conn!.Find<Persona>(id);
+            if (person is null) throw new InvalidOperationException("No se encontró el contacto");
+            person.Name = name.Trim();
+            _conn.Update(person);
+            Message = "Nombre actualizado";
+        }
+        catch (Exception ex) { Message = "Error: " + ex.Message; }
+    }
 }

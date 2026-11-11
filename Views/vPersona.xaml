@@ -64,10 +64,11 @@
                     <DataTemplate>
                         <Border BackgroundColor="White" Stroke="#E5E7EB" StrokeThickness="1" Padding="12" Margin="0,4">
                             <Border.StrokeShape><RoundRectangle CornerRadius="17" /></Border.StrokeShape>
-                            <Grid ColumnDefinitions="42,*,Auto" ColumnSpacing="12">
+                            <Grid ColumnDefinitions="42,*,Auto,Auto" ColumnSpacing="8">
                                 <Border BackgroundColor="#EEF2FF" StrokeThickness="0" HeightRequest="42" WidthRequest="42" Padding="0"><Border.StrokeShape><RoundRectangle CornerRadius="21" /></Border.StrokeShape><Label Text="♟" TextColor="#4F46E5" FontSize="21" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" /></Border>
                                 <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1"><Label Text="{Binding Name}" TextColor="#111827" FontSize="15" FontAttributes="Bold" /><Label Text="{Binding Id, StringFormat='Contacto #{0}'}" TextColor="#94A3B8" FontSize="11" /></VerticalStackLayout>
-                                <Button Grid.Column="2" Text="⋯" CommandParameter="{Binding Id}" Clicked="btnEliminar_Clicked" BackgroundColor="#FFF1F2" TextColor="#E11D48" CornerRadius="12" WidthRequest="42" HeightRequest="40" Padding="0" FontSize="20" />
+                                <Button Grid.Column="2" Text="✎" SemanticProperties.Description="Actualizar nombre" CommandParameter="{Binding Id}" Clicked="btnActualizar_Clicked" BackgroundColor="#EEF2FF" TextColor="#4F46E5" CornerRadius="12" WidthRequest="42" HeightRequest="40" Padding="0" FontSize="20" />
+                                <Button Grid.Column="3" Text="⌫" SemanticProperties.Description="Eliminar contacto" CommandParameter="{Binding Id}" Clicked="btnEliminar_Clicked" BackgroundColor="#FFF1F2" TextColor="#E11D48" CornerRadius="12" WidthRequest="42" HeightRequest="40" Padding="0" FontSize="19" />
                             </Grid>
                         </Border>
                     </DataTemplate>
